@@ -1,89 +1,33 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% nova/fct//nova-fct-defaults.ldf
-%% NOVA thesis document template
+%% ips/univ-defaults.ldf
+%% NOVA thesis configuration file
 %%
-%% This work is licensed under the
-%% The LaTeX project public license (LPPL), version 1.3c
-%% To view a copy of this license, visit
-%% https://www.latex-project.org/lppl/lppl-1-3c/
-%%
-%% Authors / Contributors:
-%%      - João Lourenço <joao.lourenco@fct.unl.pt>
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Customization for INSTITUTO POLITÉCNICO DE SETÚBAL (strings and cover)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\typeout{NT FILE schools/nova/fct/nova-fct-defaults.ldf}%
-
-%-----------------------------------------------------------------
-% New global properties
-%-----------------------------------------------------------------
-\options{/novathesis,
-% NOVA/FCT
-  nova/fct/company/logo/.new value = {},
-  nova/fct/company/name/.new value = {},
-}
+\typeout{NT FILE ips/univ-defaults.ldf}%
 
 
-\definecolor{fctlightgreen}{RGB}{67,140,74}%
-\definecolor{fctdarkgreen}{RGB}{67,140,74}%
-\definecolor{fctlightblue}{RGB}{67,120,188}%
-\definecolor{fctdarkblue}{RGB}{46,108,195}%
-\definecolor{fctlightred}{RGB}{95,5,44}%
-\definecolor{fctdarkred}{RGB}{117,37,60}%
-\definecolor{fctlightbrown}{RGB}{129,87,36}%
-\definecolor{fctdarkbrown}{RGB}{142,112,51}%
+% University
+\university(pt):={Instituto Politécnico de Setúbal}
+\university(en):={Polytechnic Institute of Setúbal}
+\university(fr):={Polytechnic Institute of Setúbal}
+\university(it):={Polytechnic Institute of Setúbal}
 
-\def\@fctblackheight{4.088cm}
+% Department
+\department(pt):={Área Departamental de \themajorfield(pt)}
+\department(en):={Department of \themajorfield(en)}
 
-% NOVA FCT specific customization
-\openany
-\ntsetup{print/secondcover=true}
-
-% Loading of fonts must be delayed until class "novathesis" is loaded
-\AtEndPreamble{%
-  \RequirePackage{gillius2}%
-}
-
-% Faculty / School
-\school(pt):={Faculdade de Ciências e Tecnologia}
-\school(en):={NOVA School of Science and Technology}
-\school(fr):={NOVA School of Science and Technology}
-\school(it):={NOVA School of Science and Technology}
-\school(logo,pt):={nova-fct-logo-pt}
-\school(logo,neg,pt):={nova-fct-logo-negative-pt}
-\school(logo,en):={nova-fct-logo-en}
-\school(logo,neg,en):={nova-fct-logo-negative-en}
-\school(logo):={\theschool(logo,\@LANG@COVER)}
-\school(logo,neg):={\theschool(logo,neg,\@LANG@COVER)}
-
-% Comiittee printing order
-% \committeeorder():={c,r,a,m}%
-\committeeorder():={c,r,a,ca,m}%
-
-% Cover background images
-% \thesiscover(1-1,bgcolor):={black}
-\thesiscover(1-1,textcolor):={white}
-% \thesiscover(2-1,textcolor):={black}
-
-
-% Set cover color (background image)
-\ifcsname @novafctcovercolor\endcsname\else
-  \IfStrEqCase{\option{/novathesis/doctype}}{
-    {bsc}   {\def\@novafctcovercolor{red}}
-    {msc}   {\def\@novafctcovercolor{blue}}
-    {phd}   {\def\@novafctcovercolor{green}}
-  }[\def\@novafctcovercolor{red}]
-\fi
-\thesiscover(\@DOCTYPE,1-1,image):={nova-fct-cover-\@novafctcovercolor-front}
-\thesiscover(\@DOCTYPE,N-2,image):={nova-fct-cover-\@novafctcovercolor-back}
-\thesiscover(\@DOCTYPE,spine,image):={nova-fct-\@novafctcovercolor-red}
-
-
+% Committee printing order
+\committeeorder():={c,r,a,m}%
 
 % Spine info
-% \spine(angle)={180}
-\spine(logo,phd):={\theuniversity(logo,neg)}
-\spine(logo,msc):={\theschool(logo,neg)}
+\spine(logo)={ips-logo}
 
+% -----------------------------------------------------------------
+% ATIVAÇÃO DA SEGUNDA CAPA (FOLHA DE ROSTO)
+% -----------------------------------------------------------------
+\ntsetup{print/secondcover=true}
 
 % Set margins for "normal" pages
 \margin(screen,top):={3.5cm}
@@ -96,47 +40,47 @@
 \margin(paper,right):={3.0cm}
 
 % Set margins for cover pages
-\margin(cover,top):={8.6cm}
+\margin(cover,top):={2.0cm}
 \margin(cover,bottom):={1.5cm}
-\margin(cover,left):={3.55cm}
+\margin(cover,left):={3.0cm}
 \margin(cover,right):={2.0cm}
-\margin(cover,2-1,top):={6.6cm}
+
+% --- DEFINIÇÃO DE ETIQUETAS (MAIÚSCULAS) ---
+% Definição robusta para PT e EN
+\adviserstring(a,1,m,pt):={ORIENTADOR}
+\adviserstring(a,1,f,pt):={ORIENTADOR}
+\adviserstring(a,2,m,pt):={ORIENTADOR}
+\adviserstring(a,2,f,pt):={ORIENTADOR}
+\adviserstring(c,1,m,pt):={CO-ORIENTADOR}
+\adviserstring(c,1,f,pt):={CO-ORIENTADOR}
+\adviserstring(c,2,m,pt):={CO-ORIENTADOR}
+\adviserstring(c,2,f,pt):={CO-ORIENTADOR}
+
+\adviserstring(a,1,m,en):={SUPERVISOR}
+\adviserstring(a,1,f,en):={SUPERVISOR}
+\adviserstring(a,2,m,en):={SUPERVISOR}
+\adviserstring(a,2,f,en):={SUPERVISOR}
+\adviserstring(c,1,m,en):={CO-SUPERVISOR}
+\adviserstring(c,1,f,en):={CO-SUPERVISOR}
+\adviserstring(c,2,m,en):={CO-SUPERVISOR}
+\adviserstring(c,2,f,en):={CO-SUPERVISOR}
 
 
-\newdata{dissertationplan}
-\dissertationplan(mscplan,en):={Dissertation Plan}
-\dissertationplan(phdplan,en):={Thesis Plan}
-\dissertationplan(phdprop,en):={FaculdadeThesis Proposal}
-\dissertationplan(mscplan,pt):={Plano de Dissertação}
-\dissertationplan(phdplan,pt):={Plano de Tese}
-\dissertationplan(phdprop,pt):={Proposta de Tese}
+\copyrighttextstring(pt)={A \theschool(\@LANG@COVER)\ e o \theuniversity(\@LANG@COVER)\ têm o direito, perpétuo e sem limites geográficos, de arquivar e publicar esta dissertação através de exemplares impressos reproduzidos em papel ou de forma digital, ou por qualquer outro meio conhecido ou que venha a ser inventado, e de a divulgar através de repositórios científicos e de admitir a sua cópia e distribuição com objetivos educacionais ou de investigação, não comerciais, desde que seja dado crédito ao autor e editor.}
 
-\SpineSetup[%
-  \def\spnimg{nova-fct-spine-red}%
-  \def\spnlogo{\thespine(logo,msc)}
-  \ifmscdoc{%
-    \def\spnimg{nova-fct-spine-blue}%
-  }{}%
-  \ifphddoc{%
-    \def\spnimg{nova-fct-spine-green}%
-    \def\spnlogo{\thespine(logo,phd)}%
-  }{}%
-]{%
-  bg/image                    = {\spnimg},
-  bg/image/angle              = {-90},
-  box/logo/bg/image           = {\spnlogo},
-  box/logo/bg/image/angle/phd = {-90},
-  box/date/fg/color           = {white},
-  box/title/fg/color          = {white},
-  box/author/fg/color         = {white},
-  % debug,
+\copyrighttextstring(en)={The \theschool(\@LANG@COVER)\ and the \theuniversity(\@LANG@COVER)\ have the right, perpetual and without geographical boundaries, to file and publish this dissertation through printed copies reproduced on paper or on digital form, or by any other means known or that may be invented, and to disseminate through scientific repositories and admit its copying and distribution for non-commercial, educational or research purposes, as long as credit is given to the author and editor.}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Draw the cover page
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\@leftcol}{0.37\linewidth}
+\newcommand{\@rightcol}{0.55\linewidth}
+
+\AtEndPreamble{%
+  \LoadHelveticaLikeFont%
 }
 
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% Draw the cover pages
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \NTAddToHook{cover/1-1/text/pre}{%
   \sffamily%
 }
@@ -144,195 +88,81 @@
   \sffamily%
 }
 
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% COVER 1
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-% -------------------------------------------------------------------------------
-% University and school logo
-\ntaddtocover[tikz]{1-1}{%
-  \node[anchor=center] at ($(current page.north west) + (20mm,-20mm)$)
-    {\includegraphics[width=21mm]{\expanded{\theuniversity(logo,neg)}}};%
-  \draw[thick] ($(current page.north west) + (3.5cm,-1cm)$) -- ++(0cm,-2cm);%
-  \node[anchor=west] at ($(current page.north west) + (40mm,-19mm)$)
-    {\includegraphics[width=35.3mm]{\expanded{\theschool(logo,neg)}}};%
+% LOGO
+% Capa 1: Imprime o logótipo
+\ntaddtocover[vspace=0cm]{1-1}{%
+  \includegraphics[height=4.6cm]{\expanded{\theschool(logo)}}%
+}
+% Capa 2: Imprime espaço invisível da mesma altura para manter alinhamento
+\ntaddtocover[vspace=0cm]{2-1}{%
+  \rule{0cm}{4.6cm}%
 }
 
-
-% -------------------------------------------------------------------------------
-% Department
-\ntaddtocover[tikz]{1-1,2-1}{%
-  \node[anchor=north west, text width=10cm] 
-    at ($(current page.north west) + (96.45mm,-11.4mm)$)
-    { \fontsize{14}{14}\sffamily%
-      \let\oldnewline=\\%
-      \def\\{\oldnewline[2pt]}%
-      \THEdepartment(\@LANG@COVER)
-    };
+% Author name and Title (AMBAS AS CAPAS)
+\ntaddtocover[halign=l, vspace=5cm]{1-1,2-1}{%
+  % Author name
+  \begin{minipage}[t]{\@leftcol}%
+    \fontsize{16}{16}\selectfont\raggedleft%
+    \MakeUppercase{\thedocauthor(name)}%
+  \end{minipage}%
+  \hfill%
+  % Title of Dissertation
+  \begin{minipage}[t]{\@rightcol}%
+    \fontsize{16}{16}\selectfont\raggedright%
+    \textbf{\MakeUppercase{\thedoctitle(\@LANG@COVER,main,cover)}}%
+  \end{minipage}%
 }
 
-% -------------------------------------------------------------------------------
-% Company logo — only for fct/di-adc bsc documents
-\ntaddtocover[tikz]{1-1,2-1}{%
-  \ifoptionvoid{/novathesis/nova/fct/company/logo}{}{%
-    \ifoptionequal{/novathesis/doctype}{bsc}{%
-      \ifoptionequal{/novathesis/schoolgiven}{nova/fct/di-adc}{%
-        \node[anchor=east] at ($(current page.north east) + (-1cm,-2cm)$)
-              {\includegraphics[width=40mm,height=21mm,keepaspectratio]
-                               {\option{/novathesis/nova/fct/company/logo}}};%
-      }{}%
-    }{}%
-  }%
+% Photo with Warning Text (CAPA 1)
+\ntaddtocover[halign=l, vspace=1]{1-1}{%
+  \hfill%
+  \begin{minipage}[t]{\@rightcol}%
+    \includegraphics[height=5.3cm]{\thefrontpageimage()}%
+    \\[0.2cm]
+    \fontsize{9}{10}\selectfont
+    ATENÇÃO que o autor deverá ser proprietário da imagem (a imagem é sua ou adquiriu os direitos de autor), de forma a não comprometer a instituição em situações de uso da mesma.
+  \end{minipage}%
 }
 
-% -------------------------------------------------------------------------------
-% Title of Dissertation (PhD) / The author name (MSc)
-\ntaddtocover[halign=l,height=3.0cm,valign=c]{1-1}{%
-  \ifphddoc{%
-    \fontsize{22}{21}\selectfont%
-    \textbf{\THEdoctitle(\@LANG@COVER,main,cover)}%
-    \ifdatadefined{doctitle}(\@LANG@COVER,sub,cover){%
-      \\[4mm]%
-      \fontsize{14}{14}\selectfont%
-      \textbf{\THEdoctitle(\@LANG@COVER,sub,cover)}%
-    }{}%
-  }{%
-    \fontsize{17}{17}\selectfont%
-    \textbf{\THEdocauthor(name)}\\[2mm]%
-    \fontsize{17}{17}\selectfont%
-    \thedocauthor(degree,\@LANG@COVER)%
-  }%
+% Espaço reservado da foto (CAPA 2)
+% Mantém o espaçamento exato sem imagem nem texto de aviso
+\ntaddtocover[halign=l, vspace=1]{2-1}{%
+  \hfill%
+  \begin{minipage}[t]{\@rightcol}%
+    % Régua invisível com a altura da imagem (5.3cm) + espaço do texto (aprox 1cm de margem de segurança)
+    \rule{0cm}{5.3cm}%
+  \end{minipage}%
 }
 
-% -------------------------------------------------------------------------------
-% The author name (PhD) / Title of Dissertation (MSc)
-\ntaddtocover[vspace=3.0cm,halign=l,height=3cm,valign=c]{1-1}{%
-  \ifphddoc{%
-    \fontsize{17}{17}\selectfont%
-    \textbf{\THEdocauthor(name)}\\[2mm]%
-    \fontsize{17}{17}\selectfont%
-    \thedocauthor(degree,\@LANG@COVER)%
-  }{%
-    \fontsize{22}{21}\selectfont%
-    \textbf{\THEdoctitle(\@LANG@COVER,main,cover)}%
-    \ifdatadefined{doctitle}(\@LANG@COVER,sub,cover){%
-      \\[4mm]%
-      \fontsize{14}{14}\selectfont%
-      \textbf{\THEdoctitle(\@LANG@COVER,sub,cover)}%
-    }{}%
-  }%
+% Degree (AMBAS AS CAPAS)
+\ntaddtocover[halign=l, vspace=1]{1-1,2-1}{%
+  \hfill%
+  \begin{minipage}[t]{\@rightcol}%
+    \fontsize{12}{14}\selectfont\raggedright%
+    \thepresentationtext%
+  \end{minipage}%
 }
 
-% -------------------------------------------------------------------------------
-% Degrere name, Specialization, Date
-\ntaddtocover[vspace=1,halign=l]{1-1}{%
-  \fontsize{14}{13}\selectfont%
-  \ifmaindoc{}{\thedissertationplan(\@DOCTYPE,\@LANG@COVER)\\[1pt]}%
-  % \ifoptionequal{/novathesis/doctype}{mscplan}{Dissertation Plan\\[1pt]}{}%
-  \THEdegreename(\@LANG@COVER)%
-  {\ifdatadefined{specialization}(\@LANG@COVER){%
-  \fontsize{11}{11}\selectfont
-  \\\THEspecialization(\@LANG@COVER)}{}}%
-  \\[3mm]%
-  \theuniversity(\@LANG@COVER)\\[1pt]%
-  \iftoggle{/novathesis/print/timestamp}{%
-    \ifdocworking{\emph{\color{yellow}\textbf{Draft:} \today}}%
-                 {\printisodate{\thentdocdate(submission,year)-\thentdocdate(submission,month)}}%
-  }{\printisodate{\thentdocdate(submission,year)-\thentdocdate(submission,month)}}%
+% Advisers (AMBAS AS CAPAS)
+\ntaddtocover[vspace=1]{1-1,2-1}{%
+  \hfill%
+  \begin{minipage}[t]{\@rightcol}%
+    \adviserstringfont(a):={\bfseries}%
+    \adviserstringfont(c):={\bfseries}%
+    \fontsize{12}{14}\selectfont%
+    \ntprintpersons{1}{2}{adviser}{a,c}%
+  \end{minipage}%
 }
 
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% COVER 2
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
-\ntaddtocover[tikz]{2-1}{%
-  \node[anchor=center] at ($(current page.north west) + (20mm,-20mm)$)
-    {\includegraphics[width=21mm]{\expanded{\theuniversity(logo)}}};%
-  \draw[thick] ($(current page.north west) + (3.5cm,-1cm)$) -- ++(0cm,-2cm);%
-  \node[anchor=west] at ($(current page.north west) + (40mm,-19mm)$)
-    {\includegraphics[width=35.3mm]{\expanded{\theschool(logo)}}};%
-  \draw[thick] ($(current page.north west) + (1cm,-4.1cm)$) -- ++(\paperwidth-2cm,0cm);%
+% Date (AMBAS AS CAPAS)
+\ntaddtocover[vspace=2]{1-1,2-1}{%
+  \hfill%
+  \begin{minipage}[t]{\@rightcol}%
+    \fontsize{10}{10}\selectfont%
+    \thentdocdate(submission,monthname) de \thentdocdate(submission,year)%
+  \end{minipage}%
 }
 
-% Company logo
-\ntaddtocover[tikz]{1-1,2-1}{%
-  \ifoptionvoid{/novathesis/nova/fct/company/logo}{}{%
-    \ifoptionequal{/novathesis/doctype}{bsc}{%
-      \ifoptionequal{/novathesis/schoolgiven}{nova/fct/di-adc}{%
-        \node[anchor=east] at ($(current page.north east) + (-1cm,-2cm)$)
-              {\includegraphics[width=40mm,height=21mm,keepaspectratio]
-                               {\option{/novathesis/nova/fct/company/logo}}};%
-      }{}%
-    }{}%
-  }%
-}
-
-
-% Title of Dissertation (PhD)
-\ntaddtocover[halign=l]{2-1}{%
-  \fontsize{17}{17}\selectfont%
-  \textbf{\THEdoctitle(\@LANG@COVER,main,cover)}%
-  \ifdatadefined{doctitle}(\@LANG@COVER,sub,cover){%
-    \\[4mm]%
-    \fontsize{12}{12}\selectfont%
-    \textbf{\THEdoctitle(\@LANG@COVER,sub,cover)}%
-  }{}%
-}
-
-% The author name
-\ntaddtocover[vspace=1,halign=l]{2-1}{%
-  \fontsize{14}{14}\selectfont%
-  \textbf{\THEdocauthor(name)}\\[2mm]%
-  \fontsize{14}{14}\selectfont%
-  \thedocauthor(degree,\@LANG@COVER)%
-}
-
-% The advisers
-\ntaddtocover[vspace=2,halign=l]{2-1}{%
-  \adviserstringfont():={\bfseries}%
-  \fontsize{11}{11}\selectfont%
-  \ntprintpersons{0.9}{2}{adviser}{\theadviserorder()}%
-}
-
-% The committee
-\ntaddtocover[vspace=1,hspace=3.5cm,halign=l]{2-1}{%
-  \committeetitlestringfont():={\bfseries}%
-  \committeestringfont():={\bfseries}%
-  \fontsize{10}{10}\selectfont%
-  \ntprintpersons{0.9}{2}{committee}{\thecommitteeorder()}%
-}
-
-% Date
-\ntaddtocover[vspace=1,halign=l]{2-1}{%
-  \fontsize{10}{10}\selectfont%
-  \ifmaindoc{}{\thedissertationplan(\@DOCTYPE,\@LANG@COVER)\\[1pt]}%
-  % \ifoptionequal{/novathesis/doctype}{mscplan}{Dissertation Plan\\[1pt]}{}%
-  \THEdegreename(\@LANG@COVER)%
-  {\ifdatadefined{specialization}(\@LANG@COVER){%
-  \fontsize{8}{9}\selectfont
-  \\\THEspecialization(\@LANG@COVER)}{}}%
-  \\[1.25ex]%
-  \theuniversity(\@LANG@COVER)\\[1pt]%
-  \iftoggle{/novathesis/print/timestamp}{%
-    \ifdocworking{\emph{\color{blue}\textbf{Draft:} \today}}%
-                 {\printisodate{\thentdocdate(submission,year)-\thentdocdate(submission,month)}}%
-  }{\printisodate{\thentdocdate(submission,year)-\thentdocdate(submission,month)}}%
-}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% BACK COVER
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-% Print sponsor logos
-\ntaddtocover[vspace=1, halign=l]{N-2}{%
-  \foreach \myi in {1, ..., 9} {%
-    \ifdatadefined{sponsor}(\@LANG@COVER,\myi,logo){%
-      \thesponsor(\@LANG@COVER,\myi,logo)\qquad%
-    }{}%
-  }%
-}
+% NOTA: O bloco de "committee" (Júri) foi removido para garantir que
+% a segunda capa seja visualmente idêntica à primeira (apenas texto),
+% conforme solicitado. Se precisares do Júri, avisa.

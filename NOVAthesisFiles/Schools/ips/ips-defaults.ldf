@@ -2,70 +2,171 @@
 %% ips/univ-defaults.ldf
 %% NOVA thesis configuration file
 %%
-%% Customization for INSTITUTO POLITÉCNICO DE SETÚBAL (strings and cover)
+%% Customization for INSTITUTO POLITÉCNICO DE SETÚBAL (IPS)
+%% Visual adaptation to comply with specific design rules (fonts and covers).
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \typeout{NT FILE ips/univ-defaults.ldf}%
 
+% -----------------------------------------------------------------
+% 1. GENERAL CONFIGURATION AND IDENTIFICATION
+% -----------------------------------------------------------------
 
-% University
+% University Name
+% Note: The English version is set to match the Portuguese one to force
+% the official name in PT even if the document is compiled in 'en' mode.
 \university(pt):={Instituto Politécnico de Setúbal}
-\university(en):={Polytechnic Institute of Setúbal}
-\university(fr):={Polytechnic Institute of Setúbal}
-\university(it):={Polytechnic Institute of Setúbal}
+\university(en):={Instituto Politécnico de Setúbal}
+% If you want the translated name in the future, uncomment the line below:
+%\university(en):={Polytechnic University of Setúbal}
 
-% Department
-\department(pt):={Área Departamental de \themajorfield(pt)}
-\department(en):={Department of \themajorfield(en)}
+% Committee Printing Order (Page 2)
+% Legend: c=Chair, r=Examiners/Rapporteurs, a=Supervisors, ca=Co-supervisors, m=Members
+% IMPORTANT: 'a' and 'ca' must be here for supervisors to appear in the Jury list.
+\committeeorder():={c,r,a,ca,m}%
 
-% Comiittee printing order
-\committeeorder():={c,r,a,m}%
+% Cover Configuration
+\spine(logo)={ips-logo}          % Spine logo (if applicable)
+\ntsetup{print/secondcover=true} % Enables printing of the Second Cover (Front Page / Page 2)
 
-% Spine info
-\spine(logo)={ips-logo}
-% \spine(author)={\thedocauthor(name,short)}
-% \spine(title)={\thedoctitle(\@LANG@COVER,main)}
-% \spine(year)={\thentdocdate(year)}
-
-% Set margins for "normal" pages
+% -----------------------------------------------------------------
+% 2. MARGINS
+% -----------------------------------------------------------------
+% Margins for screen viewing and paper printing (inner pages)
 \margin(screen,top):={3.5cm}
 \margin(screen,bottom):={2.5cm}
 \margin(screen,left):={3.0cm}
 \margin(screen,right):={3.0cm}
+
 \margin(paper,top):={3.5cm}
 \margin(paper,bottom):={2.5cm}
 \margin(paper,left):={3.0cm}
 \margin(paper,right):={3.0cm}
 
-% Set margins for cover pages
+% Specific margins exclusive to Covers (Page 1 and 2)
+% Adjust here if the cover text is too close to the logo or footer.
 \margin(cover,top):={2.0cm}
 \margin(cover,bottom):={1.5cm}
 \margin(cover,left):={3.0cm}
 \margin(cover,right):={2.0cm}
 
-\copyrighttextstring(pt)={A \theschool(\@LANG@COVER)\ e o \theuniversity(\@LANG@COVER)\ têm o direito, perpétuo e sem limites geográficos, de arquivar e publicar esta dissertação através de exemplares impressos reproduzidos em papel ou de forma digital, ou por qualquer outro meio conhecido ou que venha a ser inventado, e de a divulgar através de repositórios científicos e de admitir a sua cópia e distribuição com objetivos educacionais ou de investigação, não comerciais, desde que seja dado crédito ao autor e editor.}
+% -----------------------------------------------------------------
+% 3. STRINGS AND TRANSLATIONS (Only used in the covers)
+% -----------------------------------------------------------------
 
-\copyrighttextstring(en)={The \theschool(\@LANG@COVER)\ and the \theuniversity(\@LANG@COVER)\ have the right, perpetual and without geographical boundaries, to file and publish this dissertation through printed copies reproduced on paper or on digital form, or by any other means known or that may be invented, and to disseminate through scientific repositories and admit its copying and distribution for non-commercial, educational or research purposes, as long as credit is given to the author and editor.}
+% --- PRESENTATION TEXT (MSc Only) ---
+% Defines the phrase "Relatório de Dissertação..." appearing in the middle of the cover.
+\dissertationstring(msc,pt)={Relatório de Dissertação do Mestrado em \themajorfield(pt)}
+
+% TRICK: Force PT text even in English (EN) mode
+\dissertationstring(msc,en)={Relatório de Dissertação do Mestrado em \themajorfield(en)}
+% Original English option (commented out for future reference):
+% \dissertationstring(msc,en)={Dissertation/project/internship report of the Master in \themajorfield(en)}
+
+% --- Committee Title (Page 2) ---
+\committeetitlestring(pt):={JÚRI}
+
+% Force PT text in EN mode
+\committeetitlestring(en):={JÚRI}
+% Original English option:
+% \committeetitlestring(en):={JURY}
+
+% --- Labels for COVER 1 (Supervisors - Bottom Block) ---
+% Defines the text "ORIENTADOR" in uppercase as per design.
+% a = Adviser (Principal), c = Co-adviser
+\adviserstring(a,1,m,pt)  := {ORIENTADOR}
+\adviserstring(a,1,f,pt)  := {ORIENTADORA}
+\adviserstring(a,2,m,pt)  := {ORIENTADORES}
+\adviserstring(a,2,f,pt)  := {ORIENTADORAS}
+\adviserstring(c,1,m,pt)  := {CO-ORIENTADOR}
+\adviserstring(c,1,f,pt)  := {CO-ORIENTADORA}
+\adviserstring(c,2,m,pt)  := {CO-ORIENTADORES}
+\adviserstring(c,2,f,pt)  := {CO-ORIENTADORAS}
+
+% Force PT text in EN mode (Cover 1)
+\adviserstring(a,1,m,en)  := {ORIENTADOR}
+\adviserstring(a,1,f,en)  := {ORIENTADORA}
+\adviserstring(a,2,m,en)  := {ORIENTADORES}
+\adviserstring(a,2,f,en)  := {ORIENTADORAS}
+\adviserstring(c,1,m,en)  := {CO-ORIENTADOR}
+\adviserstring(c,1,f,en)  := {CO-ORIENTADORA}
+\adviserstring(c,2,m,en)  := {CO-ORIENTADORES}
+\adviserstring(c,2,f,en)  := {CO-ORIENTADORAS}
+
+% Original English options (commented out):
+% \adviserstring(a,1,m,en)  := {SUPERVISOR}
+% \adviserstring(a,1,f,en)  := {SUPERVISOR}
+% \adviserstring(a,2,m,en)  := {SUPERVISORS}
+% \adviserstring(a,2,f,en)  := {SUPERVISORS}
+% \adviserstring(c,1,m,en)  := {CO-SUPERVISOR}
+% \adviserstring(c,1,f,en)  := {CO-SUPERVISOR}
+% \adviserstring(c,2,m,en)  := {CO-SUPERVISORS}
+% \adviserstring(c,2,f,en)  := {CO-SUPERVISORS}
+
+% --- Labels for JURY / COVER 2 (Member List) ---
+% Defines the prefix for each person in the front page list.
+% Ex: "Presidente", "Vogal", "Orientador".
+% Note: Colons (:) have been removed as requested.
+
+% Portuguese
+\committeestring(c,1,m,pt) := {Presidente}
+\committeestring(c,1,f,pt) := {Presidente}
+\committeestring(r,1,m,pt) := {Arguente}
+\committeestring(r,1,f,pt) := {Arguente}
+\committeestring(a,1,m,pt) := {Orientador}
+\committeestring(a,1,f,pt) := {Orientadora}
+\committeestring(ca,1,m,pt):= {Co-orientador}
+\committeestring(ca,1,f,pt):= {Co-orientadora}
+\committeestring(m,1,m,pt) := {Vogal}
+\committeestring(m,1,f,pt) := {Vogal}
+% Plurals
+\committeestring(r,2,m,pt) := {Arguentes}
+\committeestring(a,2,m,pt) := {Orientadores}
+\committeestring(m,2,m,pt) := {Vogais}
+
+% Force PT text in EN mode (Cover 2)
+\committeestring(c,1,m,en) := {Presidente}
+\committeestring(c,1,f,en) := {Presidente}
+\committeestring(r,1,m,en) := {Arguente}
+\committeestring(r,1,f,en) := {Arguente}
+\committeestring(a,1,m,en) := {Orientador}
+\committeestring(a,1,f,en) := {Orientadora}
+\committeestring(ca,1,m,en):= {Co-orientador}
+\committeestring(ca,1,f,en):= {Co-orientadora}
+\committeestring(m,1,m,en) := {Vogal}
+\committeestring(m,1,f,en) := {Vogal}
+\committeestring(m,2,m,en) := {Vogais}
+\committeestring(m,2,f,en) := {Vogais}
+
+% Original English options (commented out):
+% \committeestring(c,1,m,en) := {Chair}
+% \committeestring(c,1,f,en) := {Chair}
+% \committeestring(r,1,m,en) := {Examiner}
+% \committeestring(r,1,f,en) := {Examiner}
+% \committeestring(a,1,m,en) := {Supervisor}
+% \committeestring(a,1,f,en) := {Supervisor}
+% \committeestring(ca,1,m,en):= {Co-supervisor}
+% \committeestring(ca,1,f,en):= {Co-supervisor}
+% \committeestring(m,1,m,en) := {Member}
+% \committeestring(m,1,f,en) := {Member}
+% \committeestring(m,2,m,en) := {Members}
+% \committeestring(m,2,f,en) := {Members}
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% IPS guidelines:
-% The pages should be numbered consecutively at the bottom centre of the
-% page.
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% -----------------------------------------------------------------
+% 4. COVER LAYOUT (PAGES 1 AND 2)
+% -----------------------------------------------------------------
 
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% Draw the cover page
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Definition of text column widths (Author on left, Title on right)
 \newcommand{\@leftcol}{0.37\linewidth}
 \newcommand{\@rightcol}{0.55\linewidth}
 
+% Load necessary fonts (Helvetica/Arial)
 \AtEndPreamble{%
   \LoadHelveticaLikeFont%
-  % \RequirePackage{gillius2}%
 }
 
+% Apply sans-serif font (sffamily) before printing the covers
 \NTAddToHook{cover/1-1/text/pre}{%
   \sffamily%
 }
@@ -73,31 +174,37 @@
   \sffamily%
 }
 
-% LOGO
+% --- LOGO ---
+% Page 1: Prints the school logo
 \ntaddtocover[vspace=0cm]{1-1}{%
   \includegraphics[height=4.6cm]{\expanded{\theschool(logo)}}%
 }
-
+% Page 2: Prints an invisible box (\rule) with the SAME height.
+% This ensures the text below starts at the exact same vertical position
+% on both pages, without the image on the second one.
 \ntaddtocover[vspace=0cm]{2-1}{%
   \rule{0cm}{4.6cm}%
 }
 
-% Author name and Title
+% --- AUTHOR AND TITLE (Appears on both covers) ---
 \ntaddtocover[halign=l, vspace=5cm]{1-1,2-1}{%
-  % Author name
+  % Left Column: Author Name
   \begin{minipage}[t]{\@leftcol}%
-    \fontsize{16}{16}\selectfont\raggedleft%
-    \thedocauthor(name)%
+    % Size 16pt, leading 18pt, right aligned
+    \fontsize{16}{18}\selectfont\raggedleft%
+    % \protect is needed before \MakeUppercase to avoid errors if line breaks exist
+    \protect\MakeUppercase{\thedocauthor(name)}%
   \end{minipage}%
   \hfill%
-  % Title of Dissertation
+  % Right Column: Thesis Title
   \begin{minipage}[t]{\@rightcol}%
-    \fontsize{16}{16}\selectfont\raggedright%
-    \textbf{\thedoctitle(\@LANG@COVER,main,cover)}%
+    % Size 16pt, leading 18pt, left aligned, Bold
+    \fontsize{16}{18}\selectfont\raggedright%
+    \textbf{\protect\MakeUppercase{\thedoctitle(\@LANG@COVER,main,cover)}}%
   \end{minipage}%
 }
 
-% Photo
+% --- PHOTOGRAPH (Page 1 Only) ---
 \ntaddtocover[halign=l, vspace=1]{1-1}{%
   \hfill%
   \begin{minipage}[t]{\@rightcol}%
@@ -105,45 +212,62 @@
   \end{minipage}%
 }
 
-% Degree
+% --- PHOTOGRAPH SPACER (Page 2 Only) ---
+% Invisible box to keep the Second Cover layout aligned with the First Cover.
+\ntaddtocover[halign=l, vspace=1]{2-1}{%
+  \hfill%
+  \begin{minipage}[t]{\@rightcol}%
+    \rule{0cm}{5.3cm}% Height equal to the photograph
+  \end{minipage}%
+}
+
+% --- PRESENTATION TEXT / DEGREE (Page 1 Only) ---
+% Uses the \dissertationstring defined above
 \ntaddtocover[halign=l, vspace=1]{1-1}{%
   \hfill%
   \begin{minipage}[t]{\@rightcol}%
-    \fontsize{11}{11}\selectfont\raggedright%
+    % Size 12pt, leading 14pt
+    \fontsize{12}{14}\selectfont\raggedright%
     \thepresentationtext%
   \end{minipage}%
 }
 
-% Advisers
+% --- SUPERVISORS (Page 1 Only) ---
+% Bottom block of the cover with the supervisor's name
 \ntaddtocover[vspace=1]{1-1}{%
   \hfill%
   \begin{minipage}[t]{\@rightcol}%
-    \adviserstringfont(a):={\bfseries}%
-    \adviserstringfont(c):={\bfseries}%
-    \fontsize{11}{11}\selectfont%
+    % Label style (ORIENTADOR): Bold, Size 12pt
+    \adviserstringfont(a):={\bfseries\fontsize{12}{14}\selectfont}%
+    \adviserstringfont(c):={\bfseries\fontsize{12}{14}\selectfont}%
+    % Name style: Size 12pt
+    \fontsize{12}{14}\selectfont%
     \ntprintpersons{1}{2}{adviser}{a,c}%
   \end{minipage}%
 }
 
-% Date
+% --- JURY (Page 2 Only - Front Page) ---
+% Block replacing supervisors on the second page
+\ntaddtocover[vspace=1]{2-1}{%
+  \hfill%
+  \begin{minipage}[t]{\@rightcol}%
+    % Title "JÚRI": Bold
+    \committeetitlestringfont():={\bfseries}%
+    % Labels "Presidente", "Vogal": Normal font (\upshape)
+    \committeestringfont():={\upshape}% 
+    % Text size: 11pt, leading 13pt
+    \fontsize{11}{13}\selectfont%
+    % Prints the full jury list
+    \ntprintpersons{1}{2}{committee}{\thecommitteeorder()}%
+  \end{minipage}%
+}
+
+% --- DATE (Appears on both covers) ---
 \ntaddtocover[vspace=2]{1-1,2-1}{%
   \hfill%
   \begin{minipage}[t]{\@rightcol}%
-    \fontsize{10}{10}\selectfont%
-    \printisodate{\thentdocdate(submission,year)-\thentdocdate(submission,month)}%
+    % Size 10pt, leading 12pt
+    \fontsize{10}{12}\selectfont%
+    \thentdocdate(submission,monthname) de \thentdocdate(submission,year)%
   \end{minipage}%
 }
-
-
-
-\ntaddtocover[vspace=1]{2-1}{%
-  \hfill%
-  \begin{minipage}[t]{0.75\textwidth}%
-    \ifmaindoc{%
-      \committeetitlestringfont():={\fontsize{14}{14}\selectfont\bfseries}%
-      \committeestringfont():={\bfseries}%
-      \fontsize{12}{12}\selectfont\ntprintpersons{1}{2}{committee}{\thecommitteeorder()}%
-    }{}%
-  \end{minipage}%
-}
-

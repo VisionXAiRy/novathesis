@@ -9,7 +9,13 @@ Copyright (C) 2004-25 by João M. Lourenço <joao.lourenco@fct.unl.pt>
 
 <meta property="og:image" content="http://joaomlourenco.github.io/novathesis/novathesis-latex-logo-v5.svg" />
 
-# NOVAthesis LaTeX Template
+# NOVAthesis LaTeX Template (ESTSetúbal / IPS version)
+
+> **NOTE**: For now, this is a fork of the original [NOVAthesis](https://github.com/joaomlourenco/novathesis) template by [João M. Lourenço](https://github.com/joaomlourenco), adapted to modernize the support for Escola Superior de Tecnologia (ESTSetúbal)/ Instituto Politécnico de Setúbal (IPS) requirements.
+<br>
+Once I make sure the updated version of the template meets all the necessary requirements, I will submit a pull request to the original repository for this change alone.
+<br>
+**TODO**: Eventually replace the new raster logo and icon with a vector version.
 
 ---
 
