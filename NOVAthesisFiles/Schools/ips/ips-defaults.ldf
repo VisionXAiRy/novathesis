@@ -17,8 +17,12 @@
 % the official name in PT even if the document is compiled in 'en' mode.
 \university(pt):={Instituto Politécnico de Setúbal}
 \university(en):={Instituto Politécnico de Setúbal}
-% If you want the translated name in the future, uncomment the line below:
-%\university(en):={Polytechnic University of Setúbal}
+% Original English option (commented out):
+% \university(en):={Polytechnic Institute of Setúbal}
+
+% Department (Automatic based on the major field defined in main.tex)
+\department(pt):={Área Departamental de \themajorfield(pt)}
+\department(en):={Department of \themajorfield(en)}
 
 % Committee Printing Order (Page 2)
 % Legend: c=Chair, r=Examiners/Rapporteurs, a=Supervisors, ca=Co-supervisors, m=Members
@@ -57,18 +61,24 @@
 % --- PRESENTATION TEXT (MSc Only) ---
 % Defines the phrase "Relatório de Dissertação..." appearing in the middle of the cover.
 \dissertationstring(msc,pt)={Relatório de Dissertação do Mestrado em \themajorfield(pt)}
+\dissertationstring(mscplan,pt)={Relatório de Plano de Dissertação do Mestrado em \themajorfield(pt)}
 
 % TRICK: Force PT text even in English (EN) mode
 \dissertationstring(msc,en)={Relatório de Dissertação do Mestrado em \themajorfield(en)}
-% Original English option (commented out for future reference):
-% \dissertationstring(msc,en)={Dissertation/project/internship report of the Master in \themajorfield(en)}
+% Original English option (commented out):
+% \dissertationstring(msc,en)={Dissertation/project/internship/research project report of the Master in \themajorfield(en)}
+
+\dissertationstring(mscplan,en)={Relatório de Plano de Dissertação do Mestrado em \themajorfield(pt)}
+% Original English option (commented out):
+% \dissertationstring(mscplan,en)={Master Dissertation Plan / Intermediate Report of the Master in \themajorfield(en)}
+
 
 % --- Committee Title (Page 2) ---
 \committeetitlestring(pt):={JÚRI}
 
 % Force PT text in EN mode
 \committeetitlestring(en):={JÚRI}
-% Original English option:
+% Original English option (commented out):
 % \committeetitlestring(en):={JURY}
 
 % --- Labels for COVER 1 (Supervisors - Bottom Block) ---
