@@ -30,7 +30,6 @@
 \committeeorder():={c,r,a,ca,m}%
 
 % Cover Configuration
-\spine(logo)={ips-logo}          % Spine logo (if applicable)
 \ntsetup{print/secondcover=true} % Enables printing of the Second Cover (Front Page / Page 2)
 
 % -----------------------------------------------------------------
