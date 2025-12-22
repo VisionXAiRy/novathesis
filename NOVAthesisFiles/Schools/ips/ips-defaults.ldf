@@ -59,15 +59,14 @@
 
 % --- PRESENTATION TEXT (MSc Only) ---
 % Defines the phrase "Relatório de Dissertação..." appearing in the middle of the cover.
-\dissertationstring(msc,pt)={Relatório de Dissertação do Mestrado em \themajorfield(pt)}
-\dissertationstring(mscplan,pt)={Relatório de Plano de Dissertação do Mestrado em \themajorfield(pt)}
-
+\dissertationstring(msc,pt)={Relatório de Projeto de Mestrado em \themajorfield(pt)}
+\dissertationstring(mscplan,pt)={Relatório de Introdução ao Projeto de Mestrado \themajorfield(pt)}
 % TRICK: Force PT text even in English (EN) mode
-\dissertationstring(msc,en)={Relatório de Dissertação do Mestrado em \themajorfield(en)}
+\dissertationstring(msc,en)={Relatório de Projeto de Mestrado em \themajorfield(en)}
 % Original English option (commented out):
 % \dissertationstring(msc,en)={Dissertation/project/internship/research project report of the Master in \themajorfield(en)}
 
-\dissertationstring(mscplan,en)={Relatório de Plano de Dissertação do Mestrado em \themajorfield(pt)}
+\dissertationstring(mscplan,en)={Relatório de Introdução ao Projeto de Mestrado em \themajorfield(pt)}
 % Original English option (commented out):
 % \dissertationstring(mscplan,en)={Master Dissertation Plan / Intermediate Report of the Master in \themajorfield(en)}
 
@@ -160,7 +159,6 @@
 % \committeestring(m,1,f,en) := {Member}
 % \committeestring(m,2,m,en) := {Members}
 % \committeestring(m,2,f,en) := {Members}
-
 
 % -----------------------------------------------------------------
 % 4. COVER LAYOUT (PAGES 1 AND 2)
@@ -277,6 +275,7 @@
   \begin{minipage}[t]{\@rightcol}%
     % Size 10pt, leading 12pt
     \fontsize{10}{12}\selectfont%
-    \thentdocdate(submission,monthname) de \thentdocdate(submission,year)%
+    %\thentdocdate(submission,month) de \thentdocdate(submission,year)%
+    {\printisodate{\thentdocdate(submission,year) - \thentdocdate(submission,month)}}%
   \end{minipage}%
 }
