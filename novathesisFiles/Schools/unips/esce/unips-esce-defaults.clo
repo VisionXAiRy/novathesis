@@ -1,0 +1,27 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% unips/esce/unips-esce-defaults.clo
+%% NOVA thesis configuration file
+%%
+%% Customization for ESCE-UNIPS (strings and cover)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\typeout{NT FILE unips/esce/unips-esce-defaults.clo}%
+
+
+% All LaTeX engines (pdfLaTeX, XeLaTeX, LuaLaTeX) are accepted
+\AddValidProcessor{unips/esce}{pdf,lua,xe}
+\AddValidDegree{unips/esce}{phd,msc,bsc}
+
+
+%%=======================================================================
+%% STRINGS (UNIVERSITY & SCHOOL)
+%%=======================================================================
+
+% Faculty / School
+\SetSchool(pt)={Escola Superior de Ciências Empresariais}
+\SetSchool(en)={School of Business Sciences}
+\SetSchool(fr)={School of Business Sciences}
+\SetSchool(it)={School of Business Sciences}
+
+% School logo
+\SetSchool(logo)={unips-esce-logo}

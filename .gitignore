@@ -3,7 +3,6 @@
 
 ### LLM files ###
 .github/copilot-instructions.md
-AGENTS.md
 GEMINI.md
 INFO.md
 LLM.md

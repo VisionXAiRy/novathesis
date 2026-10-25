@@ -1,0 +1,27 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% unips/unips/unips-unips-defaults.clo
+%% NOVA thesis configuration file
+%%
+%% Customization for base UNIPS (strings and cover)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\typeout{NT FILE unips/unips/unips-unips-defaults.clo}%
+
+
+% All LaTeX engines (pdfLaTeX, XeLaTeX, LuaLaTeX) are accepted
+\AddValidProcessor{unips/unips}{pdf,lua,xe}
+\AddValidDegree{unips/unips}{phd,msc,bsc}
+
+
+%%=======================================================================
+%% STRINGS (UNIVERSITY & SCHOOL)
+%%=======================================================================
+
+% University / School
+\SetSchool(pt)={Universidade Politécnica de Setúbal}
+\SetSchool(en)={Polytechnic University of Setúbal}
+\SetSchool(fr)={Polytechnic University of Setúbal}
+\SetSchool(it)={Polytechnic University of Setúbal}
+
+% School logo
+\SetSchool(logo)={unips-logo}

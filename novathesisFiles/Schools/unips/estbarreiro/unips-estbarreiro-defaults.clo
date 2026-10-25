@@ -1,0 +1,27 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% unips/estbarreiro/unips-estbarreiro-defaults.clo
+%% NOVA thesis configuration file
+%%
+%% Customization for ESTBarreiro-UNIPS (strings and cover)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\typeout{NT FILE unips/estbarreiro/unips-estbarreiro-defaults.clo}%
+
+
+% All LaTeX engines (pdfLaTeX, XeLaTeX, LuaLaTeX) are accepted
+\AddValidProcessor{unips/estbarreiro}{pdf,lua,xe}
+\AddValidDegree{unips/estbarreiro}{phd,msc,bsc}
+
+
+%%=======================================================================
+%% STRINGS (UNIVERSITY & SCHOOL)
+%%=======================================================================
+
+% Faculty / School
+\SetSchool(pt)={Escola Superior de Tecnologia do Barreiro}
+\SetSchool(en)={Barreiro School of Technology}
+\SetSchool(fr)={Barreiro School of Technology}
+\SetSchool(it)={Barreiro School of Technology}
+
+% School logo
+\SetSchool(logo)={unips-estbarreiro-logo}

@@ -1,0 +1,222 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% unips/unips-defaults.clo
+%% NOVA thesis configuration file
+%%
+%% Customization for UNIVERSIDADE POLITÉCNICA DE SETÚBAL (strings and cover)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\typeout{NT FILE unips/unips-defaults.clo}%
+
+
+%%=======================================================================
+%% METADATA & GLOBAL PROPERTIES
+%%=======================================================================
+
+% All LaTeX engines (pdfLaTeX, XeLaTeX, LuaLaTeX) are accepted
+\AddValidProcessor{unips}{pdf,lua,xe}
+\AddValidDegree{unips}{phd,msc,bsc}
+
+\ntsetup{print/frontpage=true}
+\openany
+
+
+%%=======================================================================
+%% STRINGS (UNIVERSITY & SCHOOL)
+%%=======================================================================
+
+% University
+\SetUniversity*(cat)={Polytechnic University of Setúbal}
+\SetUniversity*(cz)={Polytechnic University of Setúbal}
+\SetUniversity*(de)={Polytechnic University of Setúbal}
+\SetUniversity*(dk)={Polytechnic University of Setúbal}
+\SetUniversity*(en)={Polytechnic University of Setúbal}
+\SetUniversity*(es)={Polytechnic University of Setúbal}
+\SetUniversity*(fr)={Polytechnic University of Setúbal}
+\SetUniversity*(gr)={Polytechnic University of Setúbal}
+\SetUniversity*(it)={Polytechnic University of Setúbal}
+\SetUniversity*(nl)={Polytechnic University of Setúbal}
+\SetUniversity*(pl)={Polytechnic University of Setúbal}
+\SetUniversity*(pt)={Universidade Politécnica de Setúbal}
+\SetUniversity*(sk)={Polytechnic University of Setúbal}
+\SetUniversity*(uk)={Polytechnic University of Setúbal}
+
+% Default School strings (for base unips)
+\SetSchool*(en)={Polytechnic University of Setúbal}
+\SetSchool*(pt)={Universidade Politécnica de Setúbal}
+\SetSchool*(fr)={Polytechnic University of Setúbal}
+\SetSchool*(it)={Polytechnic University of Setúbal}
+
+% Logos
+\SetUniversity*(logo)={unips-logo}
+\SetSchool*(logo)={unips-logo}
+
+% Department
+\SetDepartmentOfString*(pt)={Departamento de}
+\SetDepartmentOfString*(en)={Department of}
+
+% Presentation Text / Report Type (matching UNIPS / ESTSetúbal template)
+\SetDissertationString(bsc,pt)={Relatório de Projeto de Licenciatura em \GetMajorField(pt)}
+\SetDissertationString(mscplan,pt)={Relatório de Introdução ao Projeto de Mestrado em \GetMajorField(pt)}
+\SetDissertationString(msc,pt)={Relatório de Projeto de Mestrado em \GetMajorField(pt)}
+\SetDissertationString(phdplan,pt)={Relatório de Introdução ao Projeto de Doutoramento em \GetMajorField(pt)}
+\SetDissertationString(phdprop,pt)={Proposta de Tese de Doutoramento em \GetMajorField(pt)}
+\SetDissertationString(phd,pt)={Tese de Doutoramento em \GetMajorField(pt)}
+
+\SetDissertationString(bsc,en)={Bachelor's Project in \GetMajorField(en) Report}
+\SetDissertationString(mscplan,en)={Introduction to the Master's Project in \GetMajorField(en) Report}
+\SetDissertationString(msc,en)={Master's Project in \GetMajorField(en) Report}
+\SetDissertationString(phdplan,en)={Introduction to the Doctoral Project in \GetMajorField(en) Report}
+\SetDissertationString(phdprop,en)={Doctoral Thesis Proposal in \GetMajorField(en)}
+\SetDissertationString(phd,en)={Doctoral Thesis in \GetMajorField(en)}
+
+% Adviser / Supervisor headings (uppercase on Cover 1)
+\SetAdviserString(a,1,m,pt)={ORIENTADOR}
+\SetAdviserString(a,1,f,pt)={ORIENTADORA}
+\SetAdviserString(a,2,m,pt)={ORIENTADORES}
+\SetAdviserString(a,2,f,pt)={ORIENTADORAS}
+\SetAdviserString(c,1,m,pt)={COORIENTADOR}
+\SetAdviserString(c,1,f,pt)={COORIENTADORA}
+\SetAdviserString(c,2,m,pt)={COORIENTADORES}
+\SetAdviserString(c,2,f,pt)={COORIENTADORAS}
+\SetAdviserString(ca,1,m,pt)={COORIENTADOR}
+\SetAdviserString(ca,1,f,pt)={COORIENTADORA}
+\SetAdviserString(ca,2,m,pt)={COORIENTADORES}
+\SetAdviserString(ca,2,f,pt)={COORIENTADORAS}
+
+\SetAdviserString(a,1,m,en)={SUPERVISOR}
+\SetAdviserString(a,1,f,en)={SUPERVISOR}
+\SetAdviserString(a,2,m,en)={SUPERVISORS}
+\SetAdviserString(a,2,f,en)={SUPERVISORS}
+\SetAdviserString(c,1,m,en)={CO-SUPERVISOR}
+\SetAdviserString(c,1,f,en)={CO-SUPERVISOR}
+\SetAdviserString(c,2,m,en)={CO-SUPERVISORS}
+\SetAdviserString(c,2,f,en)={CO-SUPERVISORS}
+\SetAdviserString(ca,1,m,en)={CO-SUPERVISOR}
+\SetAdviserString(ca,1,f,en)={CO-SUPERVISOR}
+\SetAdviserString(ca,2,m,en)={CO-SUPERVISORS}
+\SetAdviserString(ca,2,f,en)={CO-SUPERVISORS}
+
+
+%%=======================================================================
+%% COMMITTEE
+%%=======================================================================
+
+\SetCommitteeOrder*()={c,r,a,ca,m}%
+
+
+%%=======================================================================
+%% LAYOUT (MARGINS)
+%%=======================================================================
+
+% Set margins for "normal" pages (matching NOVA FCT defaults)
+\SetMargin*(screen,top)={3.5cm}
+\SetMargin*(screen,bottom)={2.5cm}
+\SetMargin*(screen,left)={3.0cm}
+\SetMargin*(screen,right)={3.0cm}
+\SetMargin*(paper,top)={3.5cm}
+\SetMargin*(paper,bottom)={2.5cm}
+\SetMargin*(paper,left)={3.0cm}
+\SetMargin*(paper,right)={3.0cm}
+
+% Set margins for cover pages (matching UNIPS / ESTSetúbal Word/PDF template)
+\SetMargin*(cover,top)={4.4cm}
+\SetMargin*(cover,bottom)={3.3cm}
+\SetMargin*(cover,left)={2.5cm}
+\SetMargin*(cover,right)={2.5cm}
+
+
+%%=======================================================================
+%% SPINE
+%%=======================================================================
+
+\SetSpine*(logo)={\GetSchool(logo)}
+
+\SpineSetup[%
+]{%
+  box/logo/bg/image           = {\GetSpine(logo)},
+  box/logo/bg/image/angle     = {-90},
+  box/title/len               = {18.0cm},
+  box/logo/len                = {2.7cm},
+}
+
+
+%%=======================================================================
+%% UTILITIES & HOOKS
+%%=======================================================================
+
+\newcommand{\@leftcol}{0.40\linewidth}
+\newcommand{\@rightcol}{0.56\linewidth}
+
+\SetThesisCover(textfont)={\sffamily}
+
+
+%%=======================================================================
+%% COVER 1 & 2 ELEMENTS
+%%=======================================================================
+
+% LOGO (Cover 1)
+\ntaddtocover[vspace=0cm]{1-1}{%
+  \includegraphics[height=2.6cm]{\expanded{\GetSchool(logo)}}%
+}
+
+% LOGO SPACER (Cover 2)
+\ntaddtocover[vspace=0cm]{2-1}{%
+  \rule{0cm}{2.6cm}%
+}
+
+% Author name and Title (Cover 1 & Cover 2)
+\ntaddtocover[halign=l, vspace=2.4cm]{1-1,2-1}{%
+  % Author name (Left column: 16pt regular uppercase, right-aligned)
+  \begin{minipage}[t]{\@leftcol}%
+    \fontsize{16}{19}\selectfont\raggedleft%
+    \MakeUppercase{\GetDocAuthor(name)}%
+  \end{minipage}%
+  \hfill%
+  % Title of Dissertation/Report (Right column: 16pt bold uppercase, left-aligned)
+  \begin{minipage}[t]{\@rightcol}%
+    \fontsize{16}{19}\selectfont\raggedright%
+    \textbf{\MakeUppercase{\GetDocTitle(\@LANG@COVER,main)}}%
+  \end{minipage}%
+}
+
+% Presentation Text / Degree (Cover 1)
+\ntaddtocover[halign=l, vfill=2]{1-1}{%
+  \hfill%
+  \begin{minipage}[t]{\@rightcol}%
+    \fontsize{12}{14.5}\selectfont\raggedright%
+    \thepresentationtext%
+  \end{minipage}%
+}
+
+% Advisers / Supervisors (Cover 1)
+\ntaddtocover[halign=l, vfill=1]{1-1}{%
+  \hfill%
+  \begin{minipage}[t]{\@rightcol}%
+    \MemSet{committeetitlestringpost}{}{}%
+    \MemSet{adviserstringfont}{}{\bfseries}%
+    \MemSet{adviserstringpost}{}{\\[2pt]}%
+    \fontsize{12}{14.5}\selectfont%
+    \ntprintpersons[name]{1}{1}{adviser}{a,c}%
+  \end{minipage}%
+}
+
+% Committee / Jury (Cover 2)
+\ntaddtocover[halign=l, vfill=1]{2-1}{%
+  \hfill%
+  \begin{minipage}[t]{\@rightcol}%
+    \ifmaindoc{%
+      \MemSet{committeetitlestringfont}{}{\fontsize{12}{14.5}\selectfont\bfseries}%
+      \MemSet{committeestringfont}{}{\bfseries}%
+      \fontsize{11}{13}\selectfont\ntprintpersons{1}{2}{committee}{\GetCommitteeOrder()}%
+    }{}%
+  \end{minipage}%
+}
+
+% Date (Cover 1 & Cover 2)
+\ntaddtocover[halign=l, vfill=2]{1-1,2-1}{%
+  \hfill%
+  \begin{minipage}[t]{\@rightcol}%
+    \fontsize{10}{12}\selectfont\raggedright%
+    \PrintDateISO{\GetDocDate(submission,year)-\GetDocDate(submission,month)}%
+  \end{minipage}%
+}

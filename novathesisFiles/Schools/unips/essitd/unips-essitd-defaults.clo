@@ -1,0 +1,27 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% unips/essitd/unips-essitd-defaults.clo
+%% NOVA thesis configuration file
+%%
+%% Customization for ESSITD-UNIPS (strings and cover)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\typeout{NT FILE unips/essitd/unips-essitd-defaults.clo}%
+
+
+% All LaTeX engines (pdfLaTeX, XeLaTeX, LuaLaTeX) are accepted
+\AddValidProcessor{unips/essitd}{pdf,lua,xe}
+\AddValidDegree{unips/essitd}{phd,msc,bsc}
+
+
+%%=======================================================================
+%% STRINGS (UNIVERSITY & SCHOOL)
+%%=======================================================================
+
+% Faculty / School
+\SetSchool(pt)={Escola Superior de Sustentabilidade, Indústria e Tecnologias Digitais}
+\SetSchool(en)={School of Sustainability, Industry and Digital Technologies}
+\SetSchool(fr)={School of Sustainability, Industry and Digital Technologies}
+\SetSchool(it)={School of Sustainability, Industry and Digital Technologies}
+
+% School logo
+\SetSchool(logo)={unips-essitd-logo}

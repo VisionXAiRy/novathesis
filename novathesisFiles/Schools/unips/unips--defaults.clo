@@ -1,0 +1,10 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% unips/unips--defaults.clo
+%% NOVA thesis configuration file
+%%
+%% Base UNIPS school configuration (when \ntsetup{school=unips} is used)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\typeout{NT FILE unips/unips--defaults.clo}%
+
+\input{\DIRSCHOOLS/unips/unips/unips-unips-defaults.clo}

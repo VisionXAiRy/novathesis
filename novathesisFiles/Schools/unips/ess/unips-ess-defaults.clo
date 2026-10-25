@@ -1,0 +1,27 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% unips/ess/unips-ess-defaults.clo
+%% NOVA thesis configuration file
+%%
+%% Customization for ESS-UNIPS (strings and cover)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\typeout{NT FILE unips/ess/unips-ess-defaults.clo}%
+
+
+% All LaTeX engines (pdfLaTeX, XeLaTeX, LuaLaTeX) are accepted
+\AddValidProcessor{unips/ess}{pdf,lua,xe}
+\AddValidDegree{unips/ess}{phd,msc,bsc}
+
+
+%%=======================================================================
+%% STRINGS (UNIVERSITY & SCHOOL)
+%%=======================================================================
+
+% Faculty / School
+\SetSchool(pt)={Escola Superior de Saúde}
+\SetSchool(en)={School of Health}
+\SetSchool(fr)={School of Health}
+\SetSchool(it)={School of Health}
+
+% School logo
+\SetSchool(logo)={unips-ess-logo}

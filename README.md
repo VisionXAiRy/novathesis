@@ -9,7 +9,19 @@ Copyright (C) 2004-26 by João M. Lourenço <joao.lourenco@fct.unl.pt>
 
 <meta property="og:image" content="https://raw.githubusercontent.com/joaomlourenco/novathesis/main/novathesisFiles/Schools/other/novathesis/Images/red/insignia-red1.svg" />
 
-# novathesis LaTeX Template
+# novathesis LaTeX Template (UNIPS / Polytechnic University of Setúbal Version)
+
+**NOTE**: This repository is a fork of the original [novathesis](https://github.com/joaomlourenco/novathesis) template by [João M. Lourenço](https://github.com/joaomlourenco), adapted to add and modernize support for the **Polytechnic University of Setúbal (*Universidade Politécnica de Setúbal* — UNIPS)** and all of its schools with vector logos and updated cover layouts:
+
+- **`unips`** (or **`unips/unips`**) — Base UNIPS (*Universidade Politécnica de Setúbal*)
+- **`unips/estsetubal`** — ESTSetúbal (*Escola Superior de Tecnologia de Setúbal*)
+- **`unips/ese`** — ESE (*Escola Superior de Educação*)
+- **`unips/esce`** — ESCE (*Escola Superior de Ciências Empresariais*)
+- **`unips/estbarreiro`** — ESTBarreiro (*Escola Superior de Tecnologia do Barreiro*)
+- **`unips/ess`** — ESS (*Escola Superior de Saúde*)
+- **`unips/essitd`** — ESSITD (*Escola Superior de Sustentabilidade, Indústria e Tecnologias Digitais* — Sines)
+
+To select one of these schools, set `\ntsetup{school=unips/estsetubal}` (or any of the IDs above) in [`0-Config/1_novathesis.tex`](0-Config/1_novathesis.tex).
 
 ---
 

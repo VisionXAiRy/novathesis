@@ -1,0 +1,27 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% unips/estsetubal/unips-estsetubal-defaults.clo
+%% NOVA thesis configuration file
+%%
+%% Customization for ESTSetúbal-UNIPS (strings and cover)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\typeout{NT FILE unips/estsetubal/unips-estsetubal-defaults.clo}%
+
+
+% All LaTeX engines (pdfLaTeX, XeLaTeX, LuaLaTeX) are accepted
+\AddValidProcessor{unips/estsetubal}{pdf,lua,xe}
+\AddValidDegree{unips/estsetubal}{phd,msc,bsc}
+
+
+%%=======================================================================
+%% STRINGS (UNIVERSITY & SCHOOL)
+%%=======================================================================
+
+% Faculty / School
+\SetSchool(pt)={Escola Superior de Tecnologia de Setúbal}
+\SetSchool(en)={Setúbal School of Technology}
+\SetSchool(fr)={Setúbal School of Technology}
+\SetSchool(it)={Setúbal School of Technology}
+
+% School logo
+\SetSchool(logo)={unips-estsetubal-logo}
